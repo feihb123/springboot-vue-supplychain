@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace -> mapper接口所在位置-->
+<mapper namespace="cn.datacharm.springbootvuecli.dao.OrderMapper">
+
+    <select id="getOrdersByConsumerIdAndStatus" resultType="cn.datacharm.springbootvuecli.pojo.CSOrder">
+        select orderId,salerId,consumerId,shopname,
+        photo,time,productId,amount,total,address,
+        addressee,tel,cs_order.status from cs_order
+        join saler on saler.id = cs_order.salerId
+        where consumerId = #{consumerId}
+        <if test="status != null">
+            and cs_order.status = #{status}
+        </if>
+        ORDER BY time desc
+    </select>
+
+</mapper>

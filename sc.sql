@@ -4,7 +4,7 @@
  Source Server         : datacharm
  Source Server Type    : MySQL
  Source Server Version : 50718
- Source Host           : 106.14.12.245:3306
+ Source Host           : x.x.x.x:3306
  Source Schema         : sc
 
  Target Server Type    : MySQL
